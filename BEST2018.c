@@ -1,3 +1,8 @@
+//which port on the robot we            Name of the motor. 
+//plug it in. It is important           You can name this whatever 
+//to put the driving motors             you want and it is used 
+//on opposite sides to provide          later to control the motors
+//enough power          ↓                   ↓                                               
 #pragma config(Motor,  port2,           rightMotor,    tmotorServoContinuousRotation, openLoop, reversed)
 #pragma config(Motor,  port9,           leftMotor,     tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port6,           smallMotor,   tmotorServoContinuousRotation, openLoop)
@@ -9,8 +14,8 @@ task main()
 	driveSpeed=3;
 	int direction;
 	direction=1;
-	motor[servo] =50;
-	while(1 == 1)
+	while(true)
+    //define all variables before the while loop, and put all things that can change at any time below (mostly button presses and motor control)
 	{
 		//Driving Speed
 		if(vexRT[Btn7U] == 1)
