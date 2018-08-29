@@ -17,7 +17,7 @@ task main()
 	while(true)
     //define all variables before the while loop, and put all things that can change at any time below (mostly button presses and motor control)
 	{
-		//Driving Speed
+		//Driving Speed, This is used for allowing us to change the speed of our robot.
 		if(vexRT[Btn7U] == 1)
 		{driveSpeed=1;}
 		else if(vexRT[Btn7L] == 1)
@@ -28,7 +28,7 @@ task main()
 		{driveSpeed=4;}
 
 
-		//Driving Motor Control - Port 2/9
+		//Driving Motor Control - Port 2/9, basic driving
 		if (direction == 1){
 		motor[leftMotor] = vexRT[Ch3] /driveSpeed;
 		motor[rightMotor] = vexRT[Ch2] /driveSpeed;}
@@ -36,10 +36,11 @@ task main()
 		motor[leftMotor] = vexRT[Ch2] /driveSpeed*-1;
 		motor[rightMotor] = vexRT[Ch3] /driveSpeed*-1;}
 
+        //Driving Direction, lets us drive backwards
 		if (vexRT[Btn8U]){direction=1;}
 		if (vexRT[Btn8D]){direction=0;}
 
-		//Grabber - Port 5
+		//Grabber - Port 5, opens and closees gripper
 		if (vexRT[Btn6U] == 1){
 			motor[servo] = -127;
 		}
@@ -47,7 +48,7 @@ task main()
 			motor[servo] =50;
 		}
 
-		//Arm Movement - Port 6
+		//Arm Movement - Port 6, moves gripper arm up and down.
 		if (vexRT[Btn5D] == 1){
 			motor[smallMotor] = -100;
 		}
