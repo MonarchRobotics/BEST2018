@@ -1,3 +1,5 @@
+//Right now this is the same as last year's code but will be edited later.
+
 //which port on the robot we            Name of the motor. 
 //plug it in. It is important           You can name this whatever 
 //to put the driving motors             you want and it is used 
