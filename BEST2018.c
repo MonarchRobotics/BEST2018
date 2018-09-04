@@ -31,6 +31,7 @@ task main()
 		/*if (direction == 1){
 		motor[leftMotor] = vexRT[Btn] /driveSpeed;
         }*/
+        
         //put the new code to control robot on beam below, try to make it so that you can swap which buttons moves the robot one way (with variable direction)
         //Driving Direction, lets us drive backwards
 		if (vexRT[Btn8U]){direction=1;}
