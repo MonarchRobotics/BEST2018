@@ -1,2 +1,7 @@
 # BEST2018
-We should probably put some instructions on how to get this code running.
+Use RobotC
+Change platform type (under Robot Tab) to VEX 2.0 Cortex.
+
+
+
+I'll add some more stuff when we actually get the robot working
