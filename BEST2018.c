@@ -1,8 +1,8 @@
-//which port on the robot we            Name of the motor. 
-//plug it in. It is important           You can name this whatever 
-//to put the driving motors             you want and it is used 
+//which port on the robot we            Name of the motor.
+//plug it in. It is important           You can name this whatever
+//to put the driving motors             you want and it is used
 //on opposite sides to provide          later to control the motors
-//enough power          ↓                   ↓                                               
+//enough power          ↓                   ↓
 #pragma config(Motor,  port2,           moveMotor,    tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port9,           swivel,     tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port5,           servo,        tmotorServoStandard, openLoop)
@@ -32,7 +32,6 @@ task main()
 		motor[leftMotor] = vexRT[Btn] /driveSpeed;
         }*/
         //put the new code to control robot on beam below, try to make it so that you can swap which buttons moves the robot one way (with variable direction)
-
         //Driving Direction, lets us drive backwards
 		if (vexRT[Btn8U]){direction=1;}
 		if (vexRT[Btn8D]){direction=-1;}
