@@ -1,8 +1,3 @@
-//which port on the robot we            Name of the motor.
-//plug it in. It is important           You can name this whatever
-//to put the driving motors             you want and it is used
-//on opposite sides to provide          later to control the motors
-//enough power          ↓                   ↓
 #pragma config(Motor,  port2,           moveMotor,    tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port9,           swivel,     tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port5,           servo,        tmotorServoStandard, openLoop)
