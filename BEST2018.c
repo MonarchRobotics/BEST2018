@@ -27,24 +27,31 @@ task main()
 		else if(vexRT[Btn7D] == 1)
 		{driveSpeed = 4;}
 
-		//Arm Movement
+		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4];
 		motor[tilt1] = vexRT[Ch3];		
 		motor[tilt2] = vexRT[Ch2];
 		
-		if(vexRT[Btn5D]){motor[servo] = servoTilt + driveSpeed;}
-		else if(vexRT[Btn6D]){motor[servo] = servoTilt - driveSpeed;}
+		if(vexRT[Btn5D]){
+			servoTilt += driveSpeed;
+			motor[servo] = servoTilt;
+		}
+		else if(vexRT[Btn6D]){
+			servoTilt -= driveSpeed;
+			motor[servo] = servoTilt;
+		}
         	else{motor[servo] = servoTilt;}
 		
+		//Close scoop arms
 		if(vexRT[Btn8L]){
 			motor[clawArm1] = 0;
-			motor[clawArm2] = 0
+			motor[clawArm2] = 0;
 		}
 		else if(vexRT[Btn8R]){
 			motor[clawArm1] = 63;
 			motor[clawArm2] = -63;
 		}
-        	else{motor[servo] = servoTilt;} 
+  
 		
         //put the new code to control robot on beam below, try to make it so that you can swap which buttons moves the robot one way (with variable direction)
 	
