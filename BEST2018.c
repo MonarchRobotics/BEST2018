@@ -32,6 +32,8 @@ task main()
 		motor[tilt1] = vexRT[Ch3];		
 		motor[tilt2] = vexRT[Ch2];
 		
+		//This code doesn't work
+		/*
 		if(vexRT[Btn5D]){
 			servoTilt += driveSpeed;
 			motor[servo] = servoTilt;
@@ -40,7 +42,8 @@ task main()
 			servoTilt -= driveSpeed;
 			motor[servo] = servoTilt;
 		}
-        	else{motor[servo] = servoTilt;}
+    		else{motor[servo] = servoTilt;}
+    		*/
 		
 		//Close scoop arms
 		if(vexRT[Btn8L]){
@@ -48,8 +51,8 @@ task main()
 			motor[clawArm2] = 0;
 		}
 		else if(vexRT[Btn8R]){
-			motor[clawArm1] = 63;
-			motor[clawArm2] = -63;
+			motor[clawArm1] = 127;
+			motor[clawArm2] = -127;
 		}
   
 		
