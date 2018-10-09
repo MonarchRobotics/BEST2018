@@ -45,7 +45,7 @@ task main()
 
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
-		motor[tilt1] = vexRT[Ch3]/4;
+		motor[tilt1] = vexRT[Ch3];
 		motor[tilt2] = vexRT[Ch2];
 
 		//This code doesn't work
