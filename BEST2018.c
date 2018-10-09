@@ -45,11 +45,12 @@ task main()
 
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
+		motor[tilt1] = vexRT[Ch4]/10;
+		motor[tilt2] = vexRT[Ch4]/10;
 		motor[tilt1] = vexRT[Ch3];
 		motor[tilt2] = vexRT[Ch2];
 
-		//This code doesn't work
-
+		//Scoop tilt control
 		if(vexRT[Btn5D]){
 				if(servoTilt < 1000){
 					servoTilt += servoSpeed;
