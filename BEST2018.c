@@ -45,23 +45,27 @@ task main()
 
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
-		motor[tilt1] = vexRT[Ch4]/10;
-		motor[tilt2] = vexRT[Ch4]/10;
 		motor[tilt1] = vexRT[Ch3];
 		motor[tilt2] = vexRT[Ch2];
+		if(vexRT[Ch3] == 0){
+			motor[tilt1] = 1;
+		}
+		if(vexRT[Ch2] == 0){
+			motor[tilt1] = 1;
+		}
 
 		//Scoop tilt control
 		if(vexRT[Btn5D]){
-				if(servoTilt < 1000){
-					servoTilt += servoSpeed;
-				}
-				motor[servo] = servoTilt;
+			if(servoTilt < 1000){
+				servoTilt += servoSpeed;
+			}
+			motor[servo] = servoTilt;
 		}
 		else if(vexRT[Btn6D]){
-				if(servoTilt > -1000){
-					servoTilt -= servoSpeed;
-				}
-				motor[servo] = servoTilt;
+			if(servoTilt > -1000){
+				servoTilt -= servoSpeed;
+			}
+			motor[servo] = servoTilt;
 
 		}
 
