@@ -30,7 +30,6 @@ task main()
 		{driveSpeed = 4;}
 
 		/* Change servo speed if we want
-
 		if(vexRT[BtnX] == 1)
 		{driveSpeed = 1;}
 		else if(vexRT[BtnX] == 1)
@@ -39,22 +38,23 @@ task main()
 		{driveSpeed = 3;}
 		else if(vexRT[BtnX] == 1)
 		{driveSpeed = 4;}
-
 		*/
 
 
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
-		motor[tilt1] = vexRT[Ch3];
-		motor[tilt2] = vexRT[Ch2];
-		if(vexRT[Ch3] == 0){
+		motor[tilt1] = vexRT[Ch3]/2;
+		
+		/*Not neccessary for current design
+		motor[tilt2] = vexRT[Ch2];*/
+		
+		if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
 			motor[tilt1] = 1;
 		}
-		if(vexRT[Ch2] == 0){
-			motor[tilt1] = 1;
-		}
-
-		//Scoop tilt control
+		
+		/*not neccessary for current design
+		//Scoop tilt control 
+		
 		if(vexRT[Btn5D]){
 			if(servoTilt < 1000){
 				servoTilt += servoSpeed;
@@ -67,17 +67,19 @@ task main()
 			}
 			motor[servo] = servoTilt;
 
-		}
+		}*/
 
 
 		//Close scoop arms
 		if(vexRT[Btn8L] == 1){
 			motor[clawArm1] = -95;
-			motor[clawArm2] = -95;
+			/*Not neccessary for current design
+			motor[clawArm2] = -95;*/
 		}
 		else if(vexRT[Btn8R] == 1){
 			motor[clawArm1] = 95;
-			motor[clawArm2] = 95;
+			/*Not neccessary for current design
+			motor[clawArm2] = 95;*/
 		}
 
 
