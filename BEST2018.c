@@ -14,8 +14,10 @@ task main()
 	driveSpeed=3;
 	int direction;
 	direction=1;
+	/*Not neccessary with current design
 	float servoTilt = 0;
 	float servoSpeed = .05;
+	*/
 
 	while(true)
     //define all variables before the while loop, and put all things that can change at any time below (mostly button presses and motor control)
@@ -46,9 +48,6 @@ task main()
 		motor[swivel] = vexRT[Ch4]/4;
 		motor[tilt1] = vexRT[Ch3];
 		motor[tilt2] = vexRT[Ch3];
-
-		/*Not neccessary for current design
-		motor[tilt2] = vexRT[Ch2];*/
 
 		//not working properly	
 		/*if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
@@ -105,4 +104,3 @@ task main()
 
 	}
 }
-
