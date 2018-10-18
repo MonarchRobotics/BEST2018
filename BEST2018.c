@@ -43,7 +43,7 @@ task main()
 
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
-		motor[tilt1] = vexRT[Ch3]/2;
+		motor[tilt1] = vexRT[Ch3];
 		
 		/*Not neccessary for current design
 		motor[tilt2] = vexRT[Ch2];*/
