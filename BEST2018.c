@@ -53,7 +53,8 @@ task main()
 
 		/*Not working properly	
 		if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
-			motor[tilt1] = 1;
+			motor[tilt1] = 10;
+			motor[tilt2] = 10;
 		}*/
 	
 		//Close gripper
