@@ -1,3 +1,4 @@
+
 #pragma config(Motor,  port2,           moveMotor,     tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port4,           clawArm1,      tmotorServoStandard, openLoop)
 #pragma config(Motor,  port5,           servo,         tmotorServoStandard, openLoop)
@@ -44,17 +45,19 @@ task main()
 		//Scoop arm Movement
 		motor[swivel] = vexRT[Ch4]/4;
 		motor[tilt1] = vexRT[Ch3];
-		
+		motor[tilt2] = vexRT[Ch3];
+
 		/*Not neccessary for current design
 		motor[tilt2] = vexRT[Ch2];*/
-		
-		if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
+
+		//not working properly	
+		/*if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
 			motor[tilt1] = 1;
-		}
-		
+		}*/
+	
 		/*not neccessary for current design
-		//Scoop tilt control 
-		
+		//Scoop tilt control
+
 		if(vexRT[Btn5D]){
 			if(servoTilt < 1000){
 				servoTilt += servoSpeed;
@@ -66,7 +69,6 @@ task main()
 				servoTilt -= servoSpeed;
 			}
 			motor[servo] = servoTilt;
-
 		}*/
 
 
@@ -103,3 +105,4 @@ task main()
 
 	}
 }
+
