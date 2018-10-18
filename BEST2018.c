@@ -31,15 +31,15 @@ task main()
 		
 		//Drive motor control
 
-    if(vexRT[Btn5U]){
-    	motor[moveMotor] = direction * 127 / driveSpeed;
-    }
-    else if(vexRT[Btn6U]){
-    	motor[moveMotor] = direction * -127 / driveSpeed;
-    }
-    else{
-    	motor[moveMotor]=0;
-    }
+    		if(vexRT[Btn5U]){
+    			motor[moveMotor] = direction * 127 / driveSpeed;
+    		}
+    		else if(vexRT[Btn6U]){
+    			motor[moveMotor] = direction * -127 / driveSpeed;
+    		}
+    		else{
+    			motor[moveMotor]=0;
+    		}
 
 
         
