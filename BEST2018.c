@@ -28,41 +28,41 @@ task main()
 		//Driving Direction, lets us drive backwards
 		if (vexRT[Btn8U]){direction = 1;}
 		if (vexRT[Btn8D]){direction = -1;}
-		
+
 		//Drive motor control
 
-    		if(vexRT[Btn5U]){
-    			motor[moveMotor] = direction * 127 / driveSpeed;
-    		}
-    		else if(vexRT[Btn6U]){
-    			motor[moveMotor] = direction * -127 / driveSpeed;
-    		}
-    		else{
-    			motor[moveMotor]=0;
-    		}
+    if(vexRT[Btn5U]){
+    	motor[moveMotor] = direction * 127 / driveSpeed;
+    }
+    else if(vexRT[Btn6U]){
+    	motor[moveMotor] = direction * -127 / driveSpeed;
+    }
+    else{
+    	motor[moveMotor]=0;
+    }
 
 
-        
+
 
 
 
 		//Arm Movement
-		motor[swivel] = vexRT[Ch4]/4;
+		motor[swivel] = vexRT[Ch4];
 		motor[tilt1] = vexRT[Ch3];
 		motor[tilt2] = vexRT[Ch3];
 
-		/*Not working properly	
+		/*Not working properly
 		if(vexRT[Ch3] > -10 && vexRT[Ch3] < 10){
 			motor[tilt1] = 10;
 			motor[tilt2] = 10;
 		}*/
-	
+
 		//Close gripper
 		if(vexRT[Btn8L] == 1){
 			motor[claw] = -95;
 		}
 		else if(vexRT[Btn8R] == 1){
 			motor[claw] = 95;
-		}    
+		}
 	}
 }
