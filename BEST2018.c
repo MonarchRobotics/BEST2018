@@ -55,9 +55,10 @@ task main()
 		//Automatic Arm Kachunk
 		//Use 5D or 6D
 		if(vexRT[Btn5D] == 1) {
-			motor[swivel] = 10;
-			wait1Msec[3000]
 			motor[tilt] = -127;
+			wait1Msec(2000);
+			motor[tilt] = 0;
 		}
+		
 	}
 }
