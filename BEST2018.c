@@ -30,15 +30,15 @@ task main()
 
 		//Drive motor control
 
-    if(vexRT[Btn5U]){
-    	motor[moveMotor] = direction * 127 / driveSpeed;
-    }
-    else if(vexRT[Btn6U]){
-    	motor[moveMotor] = direction * -127 / driveSpeed;
-    }
-    else{
-    	motor[moveMotor]=0;
-    }
+		if(vexRT[Btn5U]){
+			motor[moveMotor] = direction * 127 / driveSpeed;
+		}
+		else if(vexRT[Btn6U]){
+			motor[moveMotor] = direction * -127 / driveSpeed;
+		}
+		else{
+			motor[moveMotor]=0;
+		}
 
 		//Arm Movement
 		motor[swivel] = vexRT[Ch4];
@@ -46,18 +46,21 @@ task main()
 
 		//Close gripper
 		if(vexRT[Btn8L] == 1){
-			motor[claw] = -95;
+			motor[claw] = -128;
 		}
 		else if(vexRT[Btn8R] == 1){
-			motor[claw] = 95;
+			motor[claw] = 128;
 		}
 		
 		//Automatic Arm Kachunk
 		//Use 5D or 6D
 		if(vexRT[Btn5D] == 1) {
-			motor[tilt] = -127;
+			motor[tilt] = 127;
 			wait1Msec(2000);
 			motor[tilt] = 0;
+			motor[swivel]=-128;
+			wait1Msec(1000);
+			motor[swivel=0];
 		}
 		
 	}
