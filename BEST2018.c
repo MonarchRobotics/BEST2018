@@ -30,7 +30,6 @@ task main()
 		if (vexRT[Btn8D]){direction = -1;}
 
 		//Drive motor control
-
 		if(vexRT[Btn5U]){
 			motor[moveMotor] = direction * 127 / driveSpeed;
 		}
@@ -45,13 +44,32 @@ task main()
 		motor[swivel] = vexRT[Ch4];
 		motor[tilt] = vexRT[Ch3];
 
-		//Close gripper
+		if(vexRT[Btn8U]){
+			motor[tilt] = 12;
+			wait1Msec(2000);
+			motor[tilt] = 0;
+			motor[swivel] = -12;
+			wait1Msec(2000);
+			motor[swivel] = 0;
+			motor[tilt] = -12;
+			wait1Msec(1500);
+			motor[tilt] = 0;
+			for(int i = 0; i < 3; i++){
+				motor[swivel] = 12;
+				wait1Msec(500);
+				motor[swivel] = -12;
+				wait1Msec(500);
+			}
+			motor[swivel] = 0;
+		}
+		
+		/*Close gripper
 		if(vexRT[Btn8L] == 1){
 			motor[claw] = -128;
 		}
 		else if(vexRT[Btn8R] == 1){
 			motor[claw] = 128;
-		}
+		}*/
 		
 	}
 }
