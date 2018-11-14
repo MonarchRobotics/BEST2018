@@ -1,4 +1,3 @@
-
 #pragma config(Motor,  port2,           moveMotor,     tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port4,           claw,          tmotorServoStandard, openLoop)
 #pragma config(Motor,  port6,           tilt,          tmotorServoContinuousRotation, openLoop, reversed)
@@ -70,6 +69,14 @@ task main()
 		else if(vexRT[Btn8R] == 1){
 			motor[claw] = 128;
 		}*/
+		
+		//Reef Block Servo
+		if(vexRT[Btn8L] == 1){
+			motor[claw] = 128;
+		}
+		else if(vexRT[Btn8R] == 1){
+			motor[claw] = 0;
+		}
 		
 	}
 }
