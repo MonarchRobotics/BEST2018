@@ -10,7 +10,8 @@ task main()
 	driveSpeed=3;
 	int direction;
 	direction=1;
-
+	motor[claw] = 128;
+	float servo = 128;
 	while(true)
     //define all variables before the while loop, and put all things that can change at any time below (mostly button presses and motor control)
 	{
@@ -23,10 +24,6 @@ task main()
 		{driveSpeed = 3;}
 		else if(vexRT[Btn7D] == 1)
 		{driveSpeed = 4;}
-
-		//Driving Direction, lets us drive backwards
-		if (vexRT[Btn8U]){direction = 1;}
-		if (vexRT[Btn8D]){direction = -1;}
 
 		//Drive motor control
 		if(vexRT[Btn5U]){
@@ -41,9 +38,9 @@ task main()
 
 		//Arm Movement
 		motor[swivel] = vexRT[Ch4];
-		motor[tilt] = vexRT[Ch3];
+		motor[tilt] = vexRT[Ch2];
 
-		if(vexRT[Btn8U]){
+		/*if(vexRT[Btn8U]){
 			motor[tilt] = 12;
 			wait1Msec(2000);
 			motor[tilt] = 0;
@@ -60,23 +57,39 @@ task main()
 				wait1Msec(500);
 			}
 			motor[swivel] = 0;
-		}
-		
-		/*Close gripper
+		}*/
+
 		if(vexRT[Btn8L] == 1){
 			motor[claw] = -128;
 		}
 		else if(vexRT[Btn8R] == 1){
 			motor[claw] = 128;
-		}*/
-		
+		}
+
+
 		//Reef Block Servo
 		if(vexRT[Btn8L] == 1){
-			motor[claw] = 128;
+			motor[claw] = -50;
+			servo = -50;
 		}
 		else if(vexRT[Btn8R] == 1){
-			motor[claw] = 0;
+			motor[claw] = -128;
+			servo = -128;
 		}
-		
+		else if(vexRT[Btn8D] == 1){
+			motor[claw] = 128;
+			servo = 128;
+	  }
+
+	  //Reef Block Servo Incremental
+	  if(vexRT[Btn5D] == 1) {
+	  	servo += 0.0001;
+	  	motor[claw] += servo;
+	  }
+	  else if(vexRT[Btn6D] == 1) {
+	  	servo -= 0.0001;
+	  	motor[claw] -= servo;
+	  }
 	}
 }
+
